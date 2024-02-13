@@ -1,18 +1,20 @@
 import nodemailer from 'nodemailer'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: process.env.Email_Host,
     secure: true,
     auth: {
-      user: "ayyappadasas008@gmail.com",
-      pass: "jwdklebzsrllorkm",
+      user: process.env.Email_Auth_User,
+      pass: process.env.Email_Auth_Pass,
     },
   });
-  
-  
+
   async function sendMail(to, subject, text, html) {
     const info = await transporter.sendMail({
-        from: 'ayyappadasas008@gmail.com',
+        from: process.env.Email_Auth_User,
         to: to,
         subject: subject,
         text: text,
