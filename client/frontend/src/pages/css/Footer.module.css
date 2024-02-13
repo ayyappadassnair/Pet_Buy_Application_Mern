@@ -1,0 +1,9 @@
+.icon {
+    color: white; 
+    transition: color 0.2s; 
+  }
+  
+  .icon:hover {
+    color: red; 
+    cursor: pointer;
+  }

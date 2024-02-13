@@ -1,0 +1,33 @@
+.head{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: rgb(156, 36, 36);
+}
+input{
+    border-radius: 10px;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: none;
+    border: 1px solid black;
+    padding-left: 10px;
+    position: relative;
+}
+.button{
+    border: none;
+    background-color: rgb(156, 36, 36);
+    color: aliceblue;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+  
+  .eyeIcon{
+      position: absolute;
+      top: 39vh;
+      left: 69vw;
+      font-size: 20px;
+  }
