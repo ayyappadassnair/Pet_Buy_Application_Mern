@@ -1,9 +1,9 @@
 import  { Suspense, lazy } from 'react'
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import car from '../images/car.jpg'
-import cat from '../images/cat.jpg'
-import cow from '../images/cow.webp'
+import dogwal3 from '../images/wal.webp'
+import catwal from '../images/wal2.webp'
+import birdwal from '../images/birdwal.webp'
 import homeCss from './css/Home.module.css'
 import Loading from '../components/Loading';
 import CustomerStatification from './CustomerStatification';
@@ -39,9 +39,9 @@ const Home = () => {
   return (
     <>
     <NavBar cart={cart}/>
-  <Carousel>
+  <Carousel >
       <Carousel.Item>
-        <img src={car} text="First slide" alt='pic1' style={{width:"100%", height:"65vh"}} />
+        <img src={dogwal3} text="First slide" alt='pic1' style={{width:"100%", height:"75vh"}} />
         <Carousel.Caption>
           <h3 className={homeCss.h3}>Welcome to the world of pets...!</h3>
           <p className={homeCss.p}>We believe in responsible pet ownership. Our application provides a wealth of resources, including expert tips, guides,
@@ -49,14 +49,14 @@ const Home = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={cat} text="Second slide" alt='pic2' style={{width:"100%", height:"65vh"}} />
+        <img src={catwal} text="Second slide" alt='pic2' style={{width:"100%", height:"75vh"}} />
         <Carousel.Caption>
           <h3 className={homeCss.h3}>Discover Your Perfect Companion</h3>
           <p className={homeCss.p}>Ready to embark on the exciting adventure of finding your perfect pet? </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img src={cow} text="Third slide" alt='pic3' style={{width:"100%", height:"65vh"}}/>
+        <img src={birdwal} text="Third slide" alt='pic3' style={{width:"100%", height:"75vh"}}/>
         <Carousel.Caption>
           <h3 className={homeCss.h3}>Inclusive Pet Options</h3>
           <p className={homeCss.p}>

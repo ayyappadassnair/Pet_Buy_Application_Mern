@@ -16,34 +16,34 @@ const SubHome = () => {
     }
   return (
     <>
-     <h1 className='mt-5 mb-5 text-danger text-center text-bold'>Select Your Pets</h1>
+     <h1 className='mt-5 mb-5 text-black text-center' style={{fontFamily:"sans-serif",fontWeight:"600"}}>Select Your Pets</h1>
      <div>
      <Container className='mt-4 mb-4' style={{marginLeft:"90px"}}>
       <Row>
         <Col xs={12} md={4}>
-          <Link to='/dogpage'><Image src={doggy} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}}/></Link>
+          <Link to='/dogpage'><Image src={doggy} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}}/></Link>
           <p style={para}>Dogs</p>
         </Col>
         <Col xs={12} md={4}>
-          <Link to='/catpage'><Image src={cattty} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}}/></Link>
+          <Link to='/catpage'><Image src={cattty} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}}/></Link>
           <p  style={para}>Cats</p>
         </Col>
         <Col xs={12} md={4}>
-          <Link to='/cowpage'><Image src={cowy} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}}/></Link>
+          <Link to='/cowpage'><Image src={cowy} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}}/></Link>
           <p  style={para}>Cows</p>
         </Col>
     </Row>
       <Row className='mt-4'>
         <Col xs={12} md={4}>
-          <Link to='/birdspage'><Image src={birds} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}} /></Link>
+          <Link to='/birdspage'><Image src={birds} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}} /></Link>
           <p style={para}>Birds</p>
         </Col>
         <Col xs={12} md={4}>
-          <Link to='/fishpage'><Image src={fish} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}}/></Link>
+          <Link to='/fishpage'><Image src={fish} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}}/></Link>
           <p style={para}>Fish</p>
         </Col>
         <Col xs={12} md={4}>
-          <Link to='/reptilepage'><Image src={Reptiles} roundedCircle style={{width:"20vw",height:"40vh",border:"10px solid red"}}/></Link>
+          <Link to='/reptilepage'><Image src={Reptiles} roundedCircle className='shadow-lg' style={{width:"20vw",height:"40vh"}}/></Link>
           <p style={para}>Reptiles</p>
         </Col>
     </Row>

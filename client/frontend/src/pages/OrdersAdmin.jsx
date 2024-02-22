@@ -43,7 +43,7 @@ const OrdersAdmin = () => {
 
   return (
     <div>
-      <h2 style={{ backgroundColor: 'red', color: 'white', padding: '10px' }}>Orders</h2>
+      <h2 style={{ backgroundColor: 'rgb(156,36,36)', color: 'white', padding: '10px',textAlign:"center"}}>Orders</h2>
       <table style={{ marginLeft: "20px" }}>
         <thead>
           <tr>
@@ -56,10 +56,10 @@ const OrdersAdmin = () => {
           {orders.map((order) => (
             <tr key={order._id}>
               <td style={{ backgroundColor: "rgb(235, 241, 242)" }}>
-                <p style={para}>User: {order.user.name}</p>
-                <p style={para}>Email: {order.user.email}</p>
-                <p style={para}>Address: {order.user.address}</p>
-                <p style={para}>Phone: {order.user.phone}</p>
+                <p style={para}>User: {order.user?.name}</p>
+                <p style={para}>Email: {order.user?.email}</p>
+                <p style={para}>Address: {order.user?.address}</p>
+                <p style={para}>Phone: {order.user?.phone}</p>
               </td>
               <td style={{ backgroundColor: "rgb(235, 241, 242)" }}>
                 {order.pets.map((pet) => (

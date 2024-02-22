@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Container,Row,Col} from 'react-bootstrap'
 import profileCss from '../pages/css/UpdatePetAdmin.module.css'
+import { ToastContainer, toast } from 'react-toastify';
 
 const Profile = () => {
   const [profileData, setProfileData] = useState({
@@ -28,7 +29,7 @@ const Profile = () => {
     try {
       const userID = window.localStorage.getItem('userID');
       const response = await axios.put(`http://localhost:8000/user/${userID}`, profileData);
-      alert(response.data);
+      toast(response.data);
      } catch (error) {
       console.error('Error updating profile:', error);
     }
@@ -41,7 +42,11 @@ const Profile = () => {
 
   return (
     <div>
-     
+       <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        theme="dark" />
       <Container>
       <h2 className={profileCss.head}>Your Profile</h2>
         <Row>

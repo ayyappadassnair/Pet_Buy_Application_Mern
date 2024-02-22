@@ -4,6 +4,8 @@ import CardComponent from '../components/CardComponent';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useCookies} from 'react-cookie';
 import { toast,ToastContainer } from 'react-toastify';
+import NavBar from '../components/NavBar'
+
 
 const BirdsProduct = () => {
   const [birds,setBirds] = useState([])
@@ -32,7 +34,8 @@ const handleAddToCart = async (petId) => {
 
   return (
     <>
-      <h1 style={{ color: "red", backgroundColor: "black", padding: "15px", fontWeight: "bolder" }}>Find Your Pet...!</h1>
+    <NavBar/>
+    <h1 style={{ color: "rgb(156,36,36)", padding: "15px", fontWeight: "bolder",textAlign:"center"}}>Find Your Pet...!</h1>
       <ToastContainer
              position="top-center"
              autoClose={2000}

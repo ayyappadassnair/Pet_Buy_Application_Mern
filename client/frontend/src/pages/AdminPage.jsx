@@ -61,32 +61,33 @@ const AdminPage = () => {
   return (
     <>
       <h1 className='mt-4 text-center mb-4 text-bold text-white bg-black py-2'>Admin Dashboard</h1>
-      <Link to='/admin/viewpets'><button style={{backgroundColor:"red",color:"white",border:"none",padding:"5px 10px",fontWeight:"700",borderRadius:"10px",marginLeft:"10vw"}}>View Pets</button></Link>
-      <Link to='/admin/orders'><button style={{backgroundColor:"black",color:"white",border:"none",padding:"5px 10px",fontWeight:"700",borderRadius:"10px",marginLeft:"27vw"}}>View Orders</button></Link>
-      <Link style={{textDecoration:"none",marginLeft:"25vw",fontSize:"25px",color:"black",fontWeight:"700"}} to='/admin/addpet'>Add Pet<button style={{color:"red",fontSize:"40px",border:"none",marginBottom:"20px",backgroundColor:"white"}}><MdAddBox /></button></Link>
+      <Link to='/admin/viewpets'><button style={{backgroundColor:"red",color:"white",border:"none",padding:"5px 10px",fontWeight:"700",borderRadius:"10px",marginLeft:"7vw"}}>View Pets</button></Link>
+      <Link to='/admin/orders'><button style={{backgroundColor:"black",color:"white",border:"none",padding:"5px 10px",fontWeight:"700",borderRadius:"10px",marginLeft:"20vw"}}>View Orders</button></Link>
+      <Link style={{textDecoration:"none",marginLeft:"18vw",fontSize:"25px",color:"black",fontWeight:"700"}} to='/admin/addpet'>Add Pet<button style={{color:"red",fontSize:"40px",border:"none",marginBottom:"20px",backgroundColor:"white"}}><MdAddBox /></button></Link>
+      <Button style={{marginLeft:"10vw"}} onClick={logout}>Logout</Button>
       <Container>
         <h1 style={{margin:"10px 0",fontWeight:"700"}}>User Details</h1>
       {loading ? <p>Loading..</p> :
-        <Table>
+        <Table className='shadow-lg'>
           <thead>
             <tr>
-              <th className='bg-danger text-white'>Index</th>
-              <th className='bg-danger text-white'>Name</th>
-              <th className='bg-danger text-white'>Email</th>
-              <th className='bg-danger text-white'>Phone</th>
-              <th className='bg-danger text-white'>Address</th>
-              <th className='bg-danger text-white'>Operation</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Index</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Name</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Email</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Phone</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Address</th>
+              <th style={{background:"rgb(156,36,36)"}} className='text-white'>Operation</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user, index) => (
               <tr key={user._id}>
-                <td className='p-3 bg-black text-white'>{index + 1}</td>
-                <td className='p-3 bg-black text-white'>{user.name}</td>
-                <td className='p-3 bg-black text-white'>{user.email}</td>
-                <td className='p-3 bg-black text-white'>{user.phone}</td>
-                <td className='p-3 bg-black text-white'>{user.address}</td>
-                <td className='p-3 bg-black'>
+                <td className='p-3 bg-white text-black'>{index + 1}</td>
+                <td className='p-3 bg-white text-black'>{user.name}</td>
+                <td className='p-3 bg-white text-black'>{user.email}</td>
+                <td className='p-3 bg-white text-black'>{user.phone}</td>
+                <td className='p-3 bg-white text-black'>{user.address}</td>
+                <td className='p-3 bg-white'>
                   <MdOutlineDelete
                     className='text-danger'
                     onClick={() => handleDeleteUser(user._id)}
@@ -98,7 +99,6 @@ const AdminPage = () => {
         </Table>
       }
 
-      <Button onClick={logout}>Logout</Button>
       </Container>
 
      <ModalComponent showConfirmation={showConfirmation} cancelDeleteUser={cancelDeleteUser} 

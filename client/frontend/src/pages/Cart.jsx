@@ -4,6 +4,7 @@ import CardComponent from '../components/CardComponent';
 import { Container, Row, Col} from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import NavBar from '../components/NavBar'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Cart = () => {
@@ -47,7 +48,7 @@ const Cart = () => {
             pets,
         });
 
-        alert('Order confirmed successfully!');
+        toast('Order confirmed successfully!');
         await axios.put(`http://localhost:8000/users/${cookies.userID}/remove-from-cart/${petId}`);
         setCart(cart.filter((item) => item._id !== petId));
     } catch (error) {
@@ -56,8 +57,13 @@ const Cart = () => {
 };
   return (
       <>
+       <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        theme="dark" />
       <NavBar cart={cart}/>
-          <h1 style={{color:"red",fontWeight:"700",textAlign:"center",marginTop:"20px",marginBottom:"20px"}}> My Cart</h1>
+          <h1 style={{color:"rgb(156,36,36)",fontWeight:"700",textAlign:"center",marginTop:"20px",marginBottom:"20px"}}> My Cart</h1>
         
           <Container>
               <Row>

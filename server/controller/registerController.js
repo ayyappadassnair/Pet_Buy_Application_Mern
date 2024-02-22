@@ -123,23 +123,31 @@ const getCartController = async (req, res) => {
 };
 
 const removeFromCart = async (req, res) => {
-    const { id, petId } = req.params;
+  const { id, petId } = req.params;
 
-    try {
-        const user = await userModel.findById(id);
+  try {
+      const user = await userModel.findById(id);
 
-        if (!user) {
-            return res.status(404).json({ error: 'User not found' });
-        }
+      if (!user) {
+          return res.status(404).json({ error: 'User not found' });
+      }
 
-        user.cart.pull(petId);
-        await user.save();
+      if (!user.cart) {
+          return res.status(400).json({ error: 'User does not have a cart' });
+      }
 
-        res.json({ message: 'Pet removed from the cart successfully' });
-    } catch (error) {
-        console.error('Error removing pet from cart:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+      // Check if petId exists in the cart before pulling
+      if (user.cart.includes(petId)) {
+          user.cart.pull(petId);
+          await user.save();
+          return res.json({ message: 'Pet removed from the cart successfully' });
+      } else {
+          return res.status(404).json({ error: 'Pet not found in the cart' });
+      }
+  } catch (error) {
+      console.error('Error removing pet from cart:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
 }
 
 export { registerController,loginController,getusers,deleteUser,getUser,updateUser,getCartController,removeFromCart };

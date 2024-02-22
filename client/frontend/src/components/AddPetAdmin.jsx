@@ -4,6 +4,7 @@ import axios from 'axios';
 import addpetCss from '../pages/css/AddPetAdmin.module.css';
 import BackButton from './BackButton';
 import { Link } from 'react-router-dom';
+import {toast,ToastContainer} from 'react-toastify'
 
 const AddPetAdmin = () => {
   const initialPetData = {
@@ -53,7 +54,7 @@ const AddPetAdmin = () => {
         },
       });
 
-      alert('Pet Add Successfully');
+      toast('Pet Add Successfully');
       setTimeout(() => {
         setPetData(initialPetData);
       }, 100);
@@ -65,6 +66,11 @@ const AddPetAdmin = () => {
 
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        theme="dark" />
      <h1 className={addpetCss.head}>Add Pet Here...!</h1>
         <BackButton backpage="/admin"/>
       <Container>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams,useNavigate,Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import updateCss from '../pages/css/UpdatePetAdmin.module.css'
-
+import {toast,ToastContainer} from 'react-toastify'
 
 const UpdatePetAdmin = () => {
   const { id } = useParams();
@@ -60,11 +60,11 @@ const UpdatePetAdmin = () => {
         
       });
 
-      console.log(response.data); // Lo
+      console.log(response.data); 
       
-    alert(response.data.message);
+    toast(response.data.message);
     if(response.data.message === "Pet updated successfully"){
-      navigate('/admin/viewpets');
+      navigate('/admin');
     }
   
   
@@ -77,6 +77,11 @@ const UpdatePetAdmin = () => {
 
   return (
     <>
+    <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar
+        theme="dark" />
       <h1 className={updateCss.head}>Update Pet</h1>
       <Container>
         <Row>
